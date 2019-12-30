@@ -54,7 +54,7 @@ using Test, LinearMaps, LinearAlgebra, BenchmarkTools
                     mallocs = run(bmat, samples=3).allocs
                     @test lallocs <= mallocs
                     @test lallocs == 0
-                    
+
                     blmap = @benchmarkable mul!($w, $(LC + λ*I), $v, $α, $β)
                     bmat = @benchmarkable begin
                         mul!($w, $A, $v, $α, $β)
